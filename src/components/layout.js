@@ -28,7 +28,6 @@ const Layout = (props) => {
     return (
         <div className={content}>
             <header className={header}>
-                {/* Shamelessly taking layout file from class example */}
                 <h1 className={siteTitle}><Link to="/">{data.site.siteMetadata.title}</Link></h1>
             </header>
             <main>

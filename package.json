@@ -1,9 +1,9 @@
 {
-  "name": "assignment-4-gatsby",
+  "name": "assignment-5-final-project-mrtyson",
   "version": "1.0.0",
   "private": true,
-  "description": "assignment-4-gatsby",
-  "author": "Harvard-DCE-CSCIE3",
+  "description": "assignment-5-final-project-mrtyson",
+  "author": "mit432@g.harvard.edu",
   "keywords": [
     "gatsby"
   ],
@@ -15,20 +15,12 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@11ty/eleventy-fetch": "^4.0.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
-    "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
     "dotenv": "^16.4.5",
     "gatsby": "^5.13.3",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-remote-images": "^3.6.6",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-json": "^5.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
