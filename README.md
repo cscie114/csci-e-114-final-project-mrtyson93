@@ -37,7 +37,7 @@ In the terminal of your choice, run the following two commands in the root direc
 
 This assumes you already have node 18 or higher installed, if you do not, you can install following directions [here](https://nodejs.org/en/download/package-manager)
 
-#### Step 4: Run the website
+#### Step 3: Run the website
 
 Start the website locally by running the following command in the root directory of this repo:
  
