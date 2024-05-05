@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
     "@mui/material": "^5.15.16",
+    "@parcel/watcher": "^2.4.1",
     "dotenv": "^16.4.5",
     "gatsby": "^5.13.3",
     "react": "^18.2.0",
