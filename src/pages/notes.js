@@ -8,6 +8,8 @@ const NotesPage = () => {
   const [newNote, setNewNote] = useState('');
   const [isNewNoteDisabled, setIsNewNoteDisabled] = useState(true);
 
+  //Using this to deal with netlify issue deploying when referencing localstorage
+  const windowGlobal = typeof window !== 'undefined' && window
 
   // When a logout is selected, clear local storage and navigate to home page
   const handleLogoutClick = () => {
@@ -102,9 +104,8 @@ const NotesPage = () => {
   }, []);
 
   return (
-    <Layout pageTitle="">
+    <Layout pageTitle={windowGlobal.localStorage.getItem("notesUsername") + "'s Notes"}>
     <div>
-      <h2>{localStorage.getItem("notesUsername")}'s Notes</h2>
       <TextField
           id="addnote-input"
           label="New Note"
