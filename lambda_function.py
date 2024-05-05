@@ -2,7 +2,6 @@ import json
 import boto3
 import time
 from boto3.dynamodb.conditions import Key
-from decimal import Decimal
 
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource("dynamodb")
@@ -14,9 +13,6 @@ def lambda_handler(event, context):
     print(event)
     body = {}
     statusCode = 200
-    headers = {
-        "Content-Type": "application/json"
-    }
 
     try:
         if event['routeKey'] == "DELETE /notes/{user}/{noteid}":

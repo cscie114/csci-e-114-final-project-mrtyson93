@@ -28,6 +28,7 @@ const IndexPage = () => {
 
       // Just storing the username in localstorage so I can grab it on the notes page
       localStorage.setItem("notesUsername", username);
+      // Navigate to other page
       window.location.href = '/notes';
 
     } catch (error) {
@@ -37,7 +38,7 @@ const IndexPage = () => {
 
   const handleUsernameChange = (event) => {
     const value = event.target.value;
-    // Making sure input is expected format before login can be done
+    // Making sure input is expected format before login can be done, all lowercase and numbers, no spaces
     const regex = /^[a-z0-9]+$/;
     setUsername(value);
     setIsLoginDisabled(!regex.test(value));

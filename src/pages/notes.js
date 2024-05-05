@@ -57,6 +57,7 @@ const NotesPage = () => {
       await response.json();
       // Retrieve and set notes again
       fetchNotes();
+      // Reset new note field
       setNewNote('');
       setIsNewNoteDisabled(true);
     } catch (error) {
@@ -75,7 +76,6 @@ const NotesPage = () => {
           }
         });
   
-  
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         } 
@@ -88,13 +88,14 @@ const NotesPage = () => {
       }
     };
   
-
+  // Basically just want to disable new note button if there's nothing in the field  
   const handleNoteChange = (event) => {
     const value = event.target.value;
     setNewNote(value);
     setIsNewNoteDisabled(value.trim() === '');  
   };
 
+  // On page load, get the notes for the current user
   useEffect(() => {
     setCurrentUser(localStorage.getItem("notesUsername"));
     fetchNotes();
