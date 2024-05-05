@@ -1,7 +1,5 @@
 node_modules/
 .cache/
-.11tycache/
 public
 dist
-.env
 .DS_Store
