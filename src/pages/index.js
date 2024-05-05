@@ -49,7 +49,7 @@ const IndexPage = () => {
       <TextField
         id="username-input"
         label="username"
-        helperText="Please enter a username to login, all lowercase, no spaces"
+        helperText="Please enter a username to login, all lowercase, no spaces. No sign up necessary."
         required
         value={username}
         onChange={handleUsernameChange}

@@ -7,9 +7,7 @@ const NotesPage = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('');
   const [isNewNoteDisabled, setIsNewNoteDisabled] = useState(true);
-
-  //Using this to deal with netlify issue deploying when referencing localstorage
-  const windowGlobal = typeof window !== 'undefined' && window
+  const [currentUser, setCurrentUser] = useState('');
 
   // When a logout is selected, clear local storage and navigate to home page
   const handleLogoutClick = () => {
@@ -42,8 +40,7 @@ const NotesPage = () => {
   // API Call to add a note for a specific user
   const addNote = async () => {
     try {
-      const username = localStorage.getItem("notesUsername")
-      const response = await fetch('https://rb6iu28mgb.execute-api.us-east-1.amazonaws.com/notes/' + username, {
+      const response = await fetch('https://rb6iu28mgb.execute-api.us-east-1.amazonaws.com/notes/' + currentUser, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,8 +67,7 @@ const NotesPage = () => {
     // API Call to delete a note for a specific user
     const deleteNote = async (id) => {
       try {
-        const username = localStorage.getItem("notesUsername")
-        const response = await fetch('https://rb6iu28mgb.execute-api.us-east-1.amazonaws.com/notes/' + username + "/" + id, {
+        const response = await fetch('https://rb6iu28mgb.execute-api.us-east-1.amazonaws.com/notes/' + currentUser + "/" + id, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -100,11 +96,12 @@ const NotesPage = () => {
   };
 
   useEffect(() => {
+    setCurrentUser(localStorage.getItem("notesUsername"));
     fetchNotes();
   }, []);
 
   return (
-    <Layout pageTitle={windowGlobal.localStorage.getItem("notesUsername") + "'s Notes"}>
+    <Layout pageTitle={currentUser + "'s Notes"}>
     <div>
       <TextField
           id="addnote-input"
