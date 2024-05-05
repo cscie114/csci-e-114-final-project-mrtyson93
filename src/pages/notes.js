@@ -102,8 +102,9 @@ const NotesPage = () => {
   }, []);
 
   return (
-    <Layout pageTitle={localStorage.getItem("notesUsername") + "'s Notes"}>
+    <Layout pageTitle="">
     <div>
+      <h2>{localStorage.getItem("notesUsername")}'s Notes</h2>
       <TextField
           id="addnote-input"
           label="New Note"
